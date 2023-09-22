@@ -1,8 +1,17 @@
 import streamlit as st
 import pandas as pd
 
-st.write("Here's our first attempt at using data to create a table:")
-st.write(pd.DataFrame({
-    'first column': [1, 2, 3, 4],
-    'second column': [10, 20, 30, 40]
-}))
+
+# Create a sidebar for user input if needed
+st.sidebar.header('User Input')
+
+# Define the data
+data = {'Category': ['A', 'B', 'C', 'D', 'E'],
+        'Values': [17, 25, 15, 38, 20]}
+
+# Create a DataFrame from the data
+df = pd.DataFrame(data)
+
+# Create a bar plot using st.pyplot
+st.bar_chart(df.set_index('Category')['Values'], use_container_width=True)
+
