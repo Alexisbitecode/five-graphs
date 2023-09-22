@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import matplotlib.pyplot as plt
+
 
 # Define the data
 data = {'Category': ['Math', 'English', 'P.E', 'CS', 'Science'],
@@ -10,16 +10,6 @@ data = {'Category': ['Math', 'English', 'P.E', 'CS', 'Science'],
 df = pd.DataFrame(data)
 st.title("Student Counts for Each Subject")
 
-# Create a bar plot using Matplotlib
-fig, ax = plt.subplots()
-ax.bar(df['Category'], df['Values'])
-plt.xlabel("Subject")
-plt.ylabel("Student Counts")
-
-# Display the plot in Streamlit
-st.pyplot(fig)
-
-
-
+st.bar_chart(df.set_index('Category')['Values'], use_container_width=True)
 
 
