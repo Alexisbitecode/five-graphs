@@ -1,9 +1,19 @@
 import streamlit as st
 import pandas as pd
 
-# Load the data from a CSV file
-df = pd.read_csv("fish.csv")
+import streamlit as st
+import pandas as pd
 
-# Create a scatter plot using Streamlit
-st.scatter_chart(df[['Weight', 'Height']], use_container_width=True, width=0, height=0)
+
+# Define the data
+data = {'Category': ['A', 'B', 'C', 'D', 'E'],
+        'Values': [10, 25, 15, 30, 20]}
+
+# Create a DataFrame from the data
+df = pd.DataFrame(data)
+
+# Create a bar plot using st.pyplot
+st.bar_chart(df.set_index('Category')['Values'], use_container_width=True)
+
+
 
