@@ -11,12 +11,10 @@ data = {'Category': ['Math', 'English', 'P.E', 'CS', 'Science'],
 df = pd.DataFrame(data)
 st.title("Student Counts for Each Subject")
 
-# Set labels for x-axis and y-axis using Markdown
-st.markdown("**X-axis Label**: Subject")
-st.markdown("**Y-axis Label**: Students Counts")
+
 
 # Create a bar plot using st.pyplot
-st.bar_chart(df.set_index('Category')['Values'], use_container_width=True,x= "Subject", y = "Students Counts")
+st.line_chart(data = df, x= "Weight", y = "Length")
 
 
 
