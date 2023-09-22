@@ -4,7 +4,7 @@ import pandas as pd
 
 
 # Define the data
-data = {'Category': ['A', 'B', 'C', 'D', 'E'],
+data = {'Category': ['Math', 'English', 'P.E', 'CS', 'Science'],
         'Values': [10, 25, 15, 30, 20]}
 
 # Create a DataFrame from the data
