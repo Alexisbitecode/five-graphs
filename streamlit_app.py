@@ -1,4 +1,4 @@
-iimport streamlit as st
+import streamlit as st
 import pandas as pd
 
 # Load the data from a CSV file
