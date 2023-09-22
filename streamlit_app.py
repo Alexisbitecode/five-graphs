@@ -6,7 +6,7 @@ import io
 # Load data
 @st.cache
 def load_data():
-    df = pd.read_csv("C:/Users/lwjct/Downloads/Fish.csv")
+    df = pd.read_csv("Fish.csv")
     return df
 
 df = load_data()
