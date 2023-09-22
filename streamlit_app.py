@@ -1,25 +1,9 @@
 import streamlit as st
-import pandas as pd
 import matplotlib.pyplot as plt
-import io
+import numpy as np
 
-# Load data
-@st.cache
-def load_data():
-    df = pd.read_csv("Fish.csv")
-    return df
+arr = np.random.normal(1, 1, size=100)
+fig, ax = plt.subplots()
+ax.hist(arr, bins=20)
 
-df = load_data()
-
-# Group by species and calculate mean
-group_mean = df.groupby('Species').mean()
-
-# Display the bar chart using Streamlit
-st.bar_chart(group_mean['Weight'])
-
-# Customize the chart's appearance
-st.title("The average weight for each species")
-st.xlabel('Species')
-st.ylabel('Average weight')
-
-
+st.pyplot(fig)
