@@ -14,7 +14,6 @@ st.title("Student Counts for Each Subject")
 
 
 # Create a bar plot using st.pyplot
-st.line_chart(data = df, x= "Weight", y = "Length")
-
+st.bar_chart(df.set_index('Category')['Values'], use_container_width=True)
 
 
